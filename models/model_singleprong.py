@@ -60,6 +60,7 @@ class Resnet50Encoder(nn.Module):
         dropouts = []
         for i, sequence in enumerate(videos):
             # get the base model output for each frame
+            sequence = sequence[:3000]
             base_output = sequence.to(device)
             zero_arrays = torch.zeros((self.k,) + (self.input_dimension, 14, 14), dtype=base_output.dtype, device=base_output.device)
             base_output = torch.cat((zero_arrays, base_output), dim=0)

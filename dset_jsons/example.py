@@ -12,11 +12,12 @@ with open('./egoprocel.json', 'r') as file:
     data_structure = json.load(file)
 
 tasks = data_structure.keys()
+tasks = ['pc_assembly']
 print(tasks)
 path_to_synthetic_simplefeatures = './egoprocel/features'
-# os.makedirs(path_to_synthetic_simplefeatures)
+os.makedirs(path_to_synthetic_simplefeatures)
 path_to_synthetic_features = './egoprocel/frames'
-# os.makedirs(path_to_synthetic_features)
+os.makedirs(path_to_synthetic_features)
 
 feature_dimensionality = 4
 

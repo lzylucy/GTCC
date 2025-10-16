@@ -38,7 +38,7 @@ if __name__ == '__main__':
 
     # dataset structure json, get DSET variables
     data_structure = data_json_labels_handles(dset_json_folder, dset_name=CFG.DATASET_NAME)
-    TASKS = data_structure.keys()
+    TASKS = ['pc_assembly']  # data_structure.keys()
     data_subfolder_name, datafile_extension = get_data_subfolder_and_extension(architecture=CFG.BASEARCH.ARCHITECTURE)
     data_folder = f'{CFG.DATAFOLDER}/{data_subfolder_name}'
     

@@ -17,6 +17,7 @@ CONFIG.BASEARCH = edict()
 CONFIG.BASEARCH.ARCHITECTURE = None
 CONFIG.BASEARCH.Resnet50_ARCH = {
     'temporal_depth': temporal_depth,
+    'dropping': True,
 }
 CONFIG.BASEARCH.TEMPORAL_STACKING_ARCH = {
     'temporal_depth': temporal_depth,

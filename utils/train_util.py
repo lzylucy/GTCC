@@ -105,7 +105,7 @@ def get_data_subfolder_and_extension(architecture):
         Based on the architecture, return the subfolder where the data files will be and the file-entension of the data files.
     """
     if architecture == 'resnet50':
-        return 'frames', 'npy'
+        return 'features', 'npy'
     else:
         return 'features', 'npy'
 

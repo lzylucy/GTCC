@@ -194,7 +194,7 @@ def GTCC_loss(
             M = secondary.shape[0]
             # get the drop vectors!
             if gamma < 1:
-                BX = primary @ dropouts[j][:-1].squeeze() + dropouts[j][-1]
+                BX = (primary @ dropouts[j]) + dropouts[j][-1]
                 BX = (BX - BX.mean()) / BX.std()
                 BX = drop_min + (1-drop_min) * nn.Sigmoid()(BX)[ind_bool]
             
