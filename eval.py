@@ -129,7 +129,7 @@ if __name__ == '__main__':
     ##########################################
     # dataset util form saved json
     data_structure = data_json_labels_handles(dset_json_folder, dset_name=config.DATASET_NAME)
-    TASKS = data_structure.keys()
+    TASKS = ['pc_assembly'] # data_structure.keys()
     testTASKS = TASKS # edit if you see fit
 
     ##########################################

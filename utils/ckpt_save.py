@@ -43,16 +43,16 @@ def get_ckpt_MCN(folder, num_heads, device, dropout=False):
 
 def get_ckpt_basic(folder, device):
     ckpts = glob.glob(folder + f'/ckpt/*')
-    try:
-        best_ckpt_file = ckpts[-1]
-        ckpt_handle = ".".join(best_ckpt_file.split('/')[-1].split('.'))
-        model, _, epoch, _, _ = ckpt_restore_sprong(
-            best_ckpt_file,
-            device=device
-        )
-        return model, epoch, ckpt_handle
-    except Exception as e:
-        return None, None, None
+    # try:
+    best_ckpt_file = ckpts[-1]
+    ckpt_handle = ".".join(best_ckpt_file.split('/')[-1].split('.'))
+    model, _, epoch, _, _ = ckpt_restore_sprong(
+        best_ckpt_file,
+        device=device
+    )
+    return model, epoch, ckpt_handle
+    # except Exception as e:
+    #     return None, None, None
 
 
 def get_ckpt_for_eval(ckpt_parent_folder, config, device, num_heads=None):

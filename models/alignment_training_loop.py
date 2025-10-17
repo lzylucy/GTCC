@@ -2,6 +2,8 @@ import json
 import random
 import time
 
+import matplotlib
+matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 import torch
 import numpy as np

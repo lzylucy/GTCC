@@ -1,4 +1,5 @@
 import glob
+import os
 from easydict import EasyDict as edict
 import json 
 
@@ -83,7 +84,7 @@ def ckpt_restore_mprong(path, num_heads, dropout=False, device='cpu'):
 
 def ckpt_restore_sprong(path, device='cpu'):
     # Additional information
-    checkpoint = torch.load(path, map_location="cpu")
+    checkpoint = torch.load(path, map_location="cpu", weights_only=False)
     config_obj = checkpoint['config']
     base_model_class, base_model_params = get_base_model_deets(config_obj)
     model = base_model_class(**base_model_params).to(device)
